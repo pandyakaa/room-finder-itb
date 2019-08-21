@@ -1,20 +1,26 @@
 import os
-from flask import Flask, request, abort
-
+from decouple import config
+from flask import (
+    Flask, request, abort
+)
 from linebot import (
     LineBotApi, WebhookHandler
 )
-from linebot.exceptions import (
-    InvalidSignatureError
-)
+from linebot.exceptions import InvalidSignatureError
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
-
 app = Flask(__name__)
-
-line_bot_api = LineBotApi('YOUR-CHANNEL-ACCESS-TOKEN')
-handler = WebhookHandler('YOUR-CHANNEL-SECRET')
+# get LINE_CHANNEL_ACCESS_TOKEN from your environment variable
+line_bot_api = LineBotApi(
+    config("LINE_CHANNEL_ACCESS_TOKEN",
+           default=os.environ.get('LINE_ACCESS_TOKEN'))
+)
+# get LINE_CHANNEL_SECRET from your environment variable
+handler = WebhookHandler(
+    config("LINE_CHANNEL_SECRET",
+           default=os.environ.get('LINE_CHANNEL_SECRET'))
+)
 
 
 @app.route("/callback", methods=['POST'])
@@ -43,7 +49,8 @@ def balas(event, balasan):
 		TextSendMessage(text=balasan))
 
 ########################################################################################################
-ruang = {'9009' : 'LFM Lantai I',
+ruang = {'9008' : 'Teknik Lingkungan (gedung lama)',
+         '9009' : 'LFM Lantai I',
 		 '9011' : 'Labtek VIII Lantai II',
 		 '9012' : 'Labtek VII',
 		 '9013' : 'Labtek VII',
@@ -115,6 +122,65 @@ ruang = {'9009' : 'LFM Lantai I',
          '9404': 'Labtek I Lantai II',
          '9405': 'Labtek I Lantai II',
          'BSC - A': 'Basic Science A Lantai IV',
+
+         '1318' : 'Prodi Kimia Lantai 3',
+		 '2104' : 'Prodi Kimia Lantai 1',
+		 '2201' : 'SITH Jembatan Labtek Biru, antara Labtek X dan XI',
+		 '2202' : 'SITH Jembatan Labtek Biru, antara Labtek X dan XI',
+		 '2203' : 'SITH Jembatan Labtek Biru, antara Labtek X dan XI',
+		 '3101' : 'Sipil',
+		 '3102' : 'Sipil',
+		 '3103' : 'Sipil',
+		 '3104' : 'Sipil',
+		 '3105' : 'Sipil',
+         '3201' : 'Sipil',
+         '3202' : 'Sipil',
+         '3203' : 'Sipil',
+         '3204' : 'Sipil',
+         '3205' : 'Sipil',
+         '3206' : 'Sipil',
+         '3209' : 'Sipil',
+         '3210' : 'Sipil',
+         '3211' : 'Sipil',
+         '3213' : 'Sipil',
+         '3214' : 'Sipil',
+         '4101' : 'Gedung FTMD lantai 1',
+         '4102' : 'Gedung FTMD lantai 1',
+         '4103' : 'Gedung FTMD lantai 4',
+         '4104' : 'Gedung FTMD lantai 4',
+         '4105' : 'Gedung FTMD lantai 4',
+         '4106' : 'Gedung FTMD lantai 4',
+         '4201' : 'Basement Labtek 8 / Labtek 5',
+         '5201' : 'Teknik Kimia',
+         '5202' : 'Teknik Kimia',
+         '6101' : 'Arsitektur / Labtek IX-B',
+         '6102' : 'Arsitektur / Labtek IX-B',
+         '6302' : 'Planologi / Labtek IX-A',
+         '6303' : 'Planologi / Labtek IX-A',
+         '6305' : 'Planologi / Labtek IX-A',
+         '6306' : 'Planologi / Labtek IX-A',
+         '7601' : 'Labtek 5 lantai 1',
+         '7602' : 'Labtek 5 lantai 3',
+         '7603' : 'Labtek 5 lantai 3',
+         '7604' : 'Labtek 5 lantai 3',
+         '7605' : 'Labtek 5 lantai 3',
+         '7606' : 'Labtek 5 lantai 3',
+         '7607' : 'Labtek 5 lantai 3',
+         '7608' : 'Labtek 5 lantai 3',
+         '7609' : 'Labtek 5 lantai 3',
+         '7610' : 'Labtek 5 lantai 3',
+         '9501' : 'Gedung Doping',
+         '9502' : 'Gedung Doping',
+         '9513' : 'CRCS Lantai 2',
+         '9514' : 'CRCS Lantai 2',
+         '9515' : 'CRCS Lantai 2',
+         '9516' : 'CRCS Lantai 2',
+         '9517' : 'CRCS Lantai 2',
+         '9521' : 'CAS Lantai 3',
+         '9522' : 'CAS Lantai 3',
+         '9531' : 'CADL Lantai 2',
+         '9532' : 'CADL Lantai 2',
+         '9533' : 'CADL Lantai 2',
          }
 ########################################################################################################
 @handler.add(MessageEvent, message=TextMessage)
