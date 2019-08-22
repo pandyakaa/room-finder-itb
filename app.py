@@ -181,6 +181,64 @@ ruang = {'9008' : 'Teknik Lingkungan (gedung lama)',
          '9531' : 'CADL Lantai 2',
          '9532' : 'CADL Lantai 2',
          '9533' : 'CADL Lantai 2',
+
+         '9601' : 'Gedung A ITB Jatinangor',
+         '9602' : 'Gedung A ITB Jatinangor',
+         '9603' : 'Gedung A ITB Jatinangor',
+         '9604' : 'Gedung A ITB Jatinangor',
+         '9605' : 'Gedung A ITB Jatinangor',
+         '9606' : 'Gedung A ITB Jatinangor',
+
+         '9616' : 'Gedung B ITB Jatinangor',
+         '9617' : 'Gedung B ITB Jatinangor',
+
+         '9624' : 'Gedung C ITB Jatinangor',
+         '9625' : 'Gedung C ITB Jatinangor',
+         '9626' : 'Gedung C ITB Jatinangor',
+         '9627' : 'Gedung C ITB Jatinangor',
+         '9628' : 'Gedung C ITB Jatinangor',
+         '9629' : 'Gedung C ITB Jatinangor',
+         '9630' : 'Gedung C ITB Jatinangor',
+         '9631' : 'Gedung C ITB Jatinangor',
+         '9632' : 'Gedung C ITB Jatinangor',
+
+         '9639' : 'Gedung D ITB Jatinangor',
+         '9640' : 'Gedung D ITB Jatinangor',
+         '9641' : 'Gedung D ITB Jatinangor',
+         '9642' : 'Gedung D ITB Jatinangor',
+         '9634' : 'Gedung D ITB Jatinangor',
+         '9635' : 'Gedung D ITB Jatinangor',
+         '9636' : 'Gedung D ITB Jatinangor',
+
+         '9649' : 'Gedung E ITB Jatinangor',
+         '9650' : 'Gedung E ITB Jatinangor',
+         '9651' : 'Gedung E ITB Jatinangor',
+         '9652' : 'Gedung E ITB Jatinangor',
+
+         '9675' : 'GKU-1 ITB Jatinangor',
+         '9676' : 'GKU-1 ITB Jatinangor',
+         '9677' : 'GKU-1 ITB Jatinangor',
+
+         '9653' : 'GKU-2 ITB Jatinangor',
+         '9654' : 'GKU-2 ITB Jatinangor',
+         '9655' : 'GKU-2 ITB Jatinangor',
+         '9656' : 'GKU-2 ITB Jatinangor',
+
+         '9658' : 'Labtek 1-A ITB Jatinangor', 
+         '9659' : 'Labtek 1-A ITB Jatinangor', 
+         '9660' : 'Labtek 1-A ITB Jatinangor',
+
+         '9667' : 'Labtek 1-B ITB Jatinangor',
+         '9668' : 'Labtek 1-B ITB Jatinangor',
+         '9669' : 'Labtek 1-B ITB Jatinangor',
+         '9670' : 'Labtek 1-B ITB Jatinangor',
+         '9671' : 'Labtek 1-B ITB Jatinangor',
+         '9672' : 'Labtek 1-B ITB Jatinangor',
+         '9673' : 'Labtek 1-B ITB Jatinangor',
+         '9674' : 'Labtek 1-B ITB Jatinangor',
+
+         'KOICA 1' : 'Gedung KOICA ITB Jatinangor',
+         'KOICA 2' : 'Gedung KOICA ITB Jatinangor',
          }
 ########################################################################################################
 @handler.add(MessageEvent, message=TextMessage)
